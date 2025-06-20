@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anvitha Battineni - Professional Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXX');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Anvitha Battineni</h1>
+        <img src="photo.jpg" alt="Headshot" class="img-fluid" style="max-width: 200px;">
+        <h2>Profile</h2>
+        <p>A University of Dayton student, dependable and detail-oriented, committed to teamwork, organization, and effective communication. Seeking an assistant position in the Athletic Equipment Room to assist in the day-to-day functions of the Frericks Center while gaining work experience in sport operations.</p>
+        <h2>Contact Information</h2>
+        <p>Email: <span id="email">Click to show</span></p>
+        <button onclick="toggleEmail()">Toggle Email</button>
+        <h2>Education</h2>
+        <p><strong>University of Dayton, Dayton, United States</strong><br>Master of Science (Computer Science), Expected May 2026</p>
+        <p><strong>DVR & Dr HS MIC College of Technology, Andhra Pradesh, India</strong><br>Bachelor of Technology (Electronics and Communication Engineering), CGPA: 8.34/10, June 2022</p>
+        <h3>Relevant Coursework</h3>
+        <ul>
+            <li>Collaborated in publishing a research paper on AUTOMATIC APPEARANCE MASK and BODY TEMPERATURE FINDING SYSTEM</li>
+            <li>Participated in National Level Model Expo in AAGAMA-2020: DENSITY BASED TRAFFIC CONTROL SYSTEM</li>
+            <li>Academic based MINI PROJECT: SOUND TO ELECTRICAL ENERGY CONVERSION</li>
+        </ul>
+        <h2>Experience</h2>
+        <p><strong>Envisage Integrated Solutions Pvt Ltd, Hyderabad, Telangana, India</strong><br>Software Engineer Intern, August 2022 – February 2023<br>- Wrote technical blogs, engaged in problem solving activities to support customers, resolving 20+ issues per day<br>- Conducted unit and integration testing to optimize efficiency<br>- Collaborated in IDEs, build tools, and testing frameworks</p>
+        <p><strong>IBM India Pvt Ltd, Hyderabad, Telangana, India</strong><br>Data Engineer, March 2023 – July 2024<br>- Expertise in implementing, integrating, and customizing commercial Independent Software Vendors<br>- Provided specialist level functional and configuration knowledge in designing SAP solutions in the PP/PI module<br>- Monitored system performance for optimization</p>
+        <h2>Activities</h2>
+        <ul>
+            <li>Participated in “GAME Development” workshop organized by APSSDC, November 2018</li>
+            <li>Participated in "PCB DESIGN" workshop organized by APSSDC, June 2020</li>
+        </ul>
+        <h2>Skills</h2>
+        <div id="app">
+            <ul>
+                <li v-for="skill in skills">{{ skill }}</li>
+            </ul>
+        </div>
+        <p><strong>Languages:</strong> Fluent in English, Hindi, Telugu</p>
+        <p><strong>Laundering & Inventory Management:</strong> Experienced in handling, organizing, and tracking items with accuracy and attention to detail</p>
+        <p><strong>Team Collaboration:</strong> Proven ability to work effectively with others in team settings, ensuring seamless operations</p>
+        <p><strong>Adaptability & Flexibility:</strong> Capable of adjusting to fast-paced environments and varied schedules, including evenings and weekends</p>
+        <p><strong>Communication:</strong> Skilled in verbal and non-verbal communication, promoting effective team coordination</p>
+        <h2>Certifications</h2>
+        <ul>
+            <li>AWS Certified Cloud Practitioner</li>
+            <li>UDEMY issued "Learn JAVA Programming - Beginner to Master"</li>
+            <li>NPTEL issued "Programming Solving Through Programming in C"</li>
+        </ul>
+        <a href="waph.html">Web Application Programming and Hacking Course</a>
+        <div id="welcomeMessage"></div>
+        <div id="digitalClock"></div>
+        <div id="joke">Loading joke...</div>
+        <div id="comic">
+            <img id="comicImage" src="" alt="xkcd Comic">
+            <p id="comicTitle"></p>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Digital Clock
+        function updateClock() {
+            const now = new Date();
+            $('#digitalClock').html(now.toLocaleTimeString());
+        }
+        setInterval(updateClock, 1000);
+
+        // Show/Hide Email
+        function toggleEmail() {
+            const email = $('#email');
+            if (email.html() === 'Click to show') {
+                email.html('battinenia1@udayton.edu');
+            } else {
+                email.html('Click to show');
+            }
+        }
+
+        // Vue.js for Skills
+        new Vue({
+            el: '#app',
+            data: {
+                skills: ['C', 'JAVA', 'HTML', 'CSS', 'JavaScript', 'Node JS', 'Mongo DB']
+            }
+        });
+
+        // JokeAPI
+        async function fetchJoke() {
+            const response = await fetch('https://v2.jokeapi.dev/joke/Any');
+            const result = await response.json();
+            $('#joke').html(result.type === 'single' ? result.joke : `${result.setup} - ${result.delivery}`);
+        }
+        fetchJoke();
+        setInterval(fetchJoke, 60000);
+
+        // xkcd API
+        async function fetchComic() {
+            const response = await fetch('https://xkcd.com/info.0.json');
+            const result = await response.json();
+            $('#comicImage').attr('src', result.img);
+            $('#comicTitle').html(result.title);
+        }
+        fetchComic();
+
+        // Cookies
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i];
+                while (cookie.charAt(0) === ' ') cookie = cookie.substring(1);
+                if (cookie.indexOf(nameEQ) === 0) return cookie.substring(nameEQ.length);
+            }
+            return null;
+        }
+
+        const lastVisit = getCookie('lastVisit');
+        if (!lastVisit) {
+            $('#welcomeMessage').html('Welcome to my homepage!');
+            setCookie('lastVisit', new Date().toISOString(), 365);
+        } else {
+            $('#welcomeMessage').html(`Welcome back! Your last visit was ${new Date(lastVisit).toLocaleString()}`);
+            setCookie('lastVisit', new Date().toISOString(), 365);
+        }
+    </script>
+</html>
