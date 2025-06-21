@@ -90,13 +90,6 @@
             font-weight: bold;
             transform: translate(-50%, -50%);
         }
-        #resumeLinkBottom {
-            text-align: center;
-            padding: 20px;
-            background-color: #f1f1f1;
-            margin-top: 40px;
-            border-top: 1px solid #ddd;
-        }
         .navbar {
             margin-bottom: 20px;
             background-color: #fff;
@@ -256,7 +249,7 @@
         }
         fetchComic();
 
-        // Cookies
+        // Cookies for Visit Tracking
         function setCookie(name, value, days) {
             let expires = "";
             if (days) {
@@ -278,20 +271,19 @@
             return null;
         }
 
-        const lastVisit = getCookie('lastVisit');
-        if (!lastVisit) {
-            $('#welcomeMessage').html('Welcome to my homepage for the first time!');
-            setCookie('lastVisit', new Date().toISOString(), 365);
-        } else {
-            $('#welcomeMessage').html(`Welcome back! Your last visit was ${new Date(lastVisit).toLocaleString()}`);
+        function updateWelcomeMessage() {
+            let visitCount = parseInt(getCookie('visitCount')) || 0;
+            const lastVisit = getCookie('lastVisit');
+            visitCount += 1;
+            setCookie('visitCount', visitCount, 365);
+            if (visitCount === 1) {
+                $('#welcomeMessage').html('Welcome to my homepage for the first time! This is your 1st visit.');
+            } else {
+                $('#welcomeMessage').html(`Welcome back! Your last visit was ${new Date(lastVisit).toLocaleString()}. This is your ${visitCount}th visit.`);
+            }
             setCookie('lastVisit', new Date().toISOString(), 365);
         }
-
-        // Scroll to Resume Link
-        $('.nav-link').on('click', function(e) {
-            e.preventDefault();
-            $('html, body').animate({ scrollTop: $('#resumeLinkBottom').offset().top }, 1000);
-        });
+        $(document).ready(updateWelcomeMessage);
 
         // WeatherBit API
         async function fetchWeather() {
@@ -319,7 +311,6 @@
         <a class="navbar-brand" href="#">Anvitha Battineni</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#resumeLinkBottom">Download Resume</a></li>
             </ul>
         </div>
     </nav>
@@ -338,7 +329,6 @@
             <li class="list-group-item">🔗 <span id="github">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionGitHub()"></button></li>
             <li class="list-group-item">⛓️ <span id="linkedin">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionLinkedIn()"></button></li>
         </ul>
-        <a href="https://github.com/battinenia1/raw/main/resume.docx" class="btn btn-success mt-2" download="Anvitha_Battineni_Resume.docx" onclick="checkDownload(event)">Download Resume</a>
         <div id="weatherIcon" class="text-center mt-3"></div>
         <h2 class="section-title">Education</h2>
         <div class="card">
@@ -427,26 +417,6 @@
                 <img src="https://s01.flagcounter.com/count2/7pli/bg_FFFFFF/txt_000000/border_CCCCCC/columns_4/maxflags_100/viewers_0/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0">
             </a>
         </div>
-        <div id="resumeLinkBottom">
-            <a href="https://github.com/battinenia1/raw/main/resume.docx" class="btn btn-success" download="Anvitha_Battineni_Resume.docx" onclick="checkDownload(event)">Download Resume</a>
-        </div>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Download Check Function
-        function checkDownload(event) {
-            fetch('https://github.com/battinenia1/raw/main/resume.docx')
-                .then(response => {
-                    if (!response.ok) {
-                        event.preventDefault();
-                        alert('Resume file not found. Please ensure it is uploaded to https://github.com/battinenia1/raw/main/resume.docx');
-                    }
-                })
-                .catch(error => {
-                    event.preventDefault();
-                    alert('Error accessing resume. Please check the file or try again later.');
-                });
-        }
-    </script>
-</body>
 </html>
