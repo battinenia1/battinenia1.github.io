@@ -295,8 +295,8 @@
 
         // WeatherBit API
         async function fetchWeather() {
-            const apiKey = 'dd51a99ec1924d4cb8f700421f201f88'; // Replace with your Weatherbit API key
-            const city = 'Dayton, OH'; // You can make this dynamic or user-input
+            const apiKey = 'YOUR_API_KEY'; // Replace with your Weatherbit API key
+            const city = 'Dayton, OH';
             const url = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}`;
             try {
                 const response = await fetch(url);
@@ -311,7 +311,7 @@
             }
         }
         fetchWeather();
-        setInterval(fetchWeather, 3600000); // Update every hour
+        setInterval(fetchWeather, 3600000);
     </script>
 </head>
 <body>
@@ -338,7 +338,7 @@
             <li class="list-group-item">🔗 <span id="github">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionGitHub()"></button></li>
             <li class="list-group-item">⛓️ <span id="linkedin">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionLinkedIn()"></button></li>
         </ul>
-        <a href="https://github.com/battinenia1/raw/main/resume.docx" class="btn btn-success mt-2" download="Anvitha_Battineni_Resume.docx">Download Resume</a>
+        <a href="https://github.com/battinenia1/raw/main/resume.docx" class="btn btn-success mt-2" download="Anvitha_Battineni_Resume.docx" onclick="checkDownload(event)">Download Resume</a>
         <div id="weatherIcon" class="text-center mt-3"></div>
         <h2 class="section-title">Education</h2>
         <div class="card">
@@ -428,8 +428,25 @@
             </a>
         </div>
         <div id="resumeLinkBottom">
-            <a href="https://github.com/battinenia1/raw/main/resume.docx" class="btn btn-success" download="Anvitha_Battineni_Resume.docx">Download Resume</a>
+            <a href="https://github.com/battinenia1/raw/main/resume.docx" class="btn btn-success" download="Anvitha_Battineni_Resume.docx" onclick="checkDownload(event)">Download Resume</a>
         </div>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Download Check Function
+        function checkDownload(event) {
+            fetch('https://github.com/battinenia1/raw/main/resume.docx')
+                .then(response => {
+                    if (!response.ok) {
+                        event.preventDefault();
+                        alert('Resume file not found. Please ensure it is uploaded to https://github.com/battinenia1/raw/main/resume.docx');
+                    }
+                })
+                .catch(error => {
+                    event.preventDefault();
+                    alert('Error accessing resume. Please check the file or try again later.');
+                });
+        }
+    </script>
+</body>
 </html>
