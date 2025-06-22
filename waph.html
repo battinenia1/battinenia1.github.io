@@ -1,25 +1,222 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WAPH Course</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Web Application Programming and Hacking</h1>
-        <p>Instructor: Dr. Phu Phung</p>
-        <p>Course overview: Learn web development, APIs, and security through hands-on labs and projects.</p>
-        <h2>Hands-On Projects</h2>
-        <ul>
-            <li>Lab 1: Web Foundations</li>
-            <li>Lab 2: Front-end Development with Ajax, CSS, jQuery</li>
-            <li>Project 1: Professional Profile Website</li>
-        </ul>
-        <a href="index.html">Back to Home</a>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Web Application Programming & Hacking</title> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+rel="stylesheet"> 
+<style> 
+body { 
+font-family: 'Poppins', sans-serif; 
+background: linear-gradient(135deg, #e0eafc, #68a2e8); 
+padding: 0; 
+overflow-x: hidden; 
+perspective: 1500px; 
+} 
+.navbar { 
+background: #343a40; 
+padding: 0.75rem 0; 
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+transform-style: preserve-3d; 
+animation: slideIn 0.5s ease-out; 
+} 
+@keyframes slideIn { 
+0% { 
+transform: translateY(-100%); 
+} 
+100% { 
+transform: translateY(0); 
+} 
+} 
+.navbar a { 
+color: white; 
+text-decoration: none; 
+transition: color 0.3s ease, transform 0.3s ease; 
+} 
+.navbar a:hover { 
+color: #f1f1f1; 
+transform: translateZ(10px) scale(1.05); 
+} 
+.navbar-brand { 
+color: white !important; 
+} 
+.profile-card { 
+background: white; 
+border-radius: 10px; 
+padding: 2rem; 
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+margin: 1rem 0; 
+transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease-in-out; 
+transform-style: preserve-3d; 
+animation: fadeInUp 0.8s ease-out; 
+} 
+@keyframes fadeInUp { 
+0% { 
+opacity: 0; 
+transform: translateY(20px); 
+} 
+100% { 
+opacity: 1; 
+transform: translateY(0); 
+} 
+} 
+.profile-card:hover { 
+transform: translateY(-10px) rotateY(5deg); 
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); 
+opacity: 0.95; 
+} 
+.btn-primary { 
+background-color: #007bff; 
+border-color: #007bff; 
+transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; 
+} 
+.btn-primary:hover { 
+background-color: #0056b3; 
+border-color: #0056b3; 
+transform: scale(1.05); 
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+} 
+h3, h4 { 
+color: #343f5a; 
+} 
+hr { 
+border: 0; 
+border-top: 1px solid #ddd; 
+} 
+.profile-card ul { 
+padding-left: 1.5rem; 
+} 
+.profile-card ul li { 
+margin-bottom: 0.5rem; 
+} 
+.profile-card h2 { 
+color: #0062e6; 
+} 
+html { 
+scroll-behavior: smooth; 
+} 
+.fadeIn { 
+animation: fadeIn 1s ease-out; 
+} 
+@keyframes fadeIn { 
+0% { 
+opacity: 0; 
+transform: translateY(20px); 
+} 
+100% { 
+opacity: 1; 
+transform: translateY(0); 
+} 
+} 
+</style> 
+</head> 
+<body> 
+<nav class="navbar navbar-expand-lg"> 
+<div class="container"> 
+<a class="navbar-brand" href="index.html">Battineni Anvitha</a> 
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs- 
+target="#navbarNav"> 
+<span class="navbar-toggler-icon"></span> 
+</button> 
+<div class="collapse navbar-collapse justify-content-end" id="navbarNav"> 
+<ul class="navbar-nav"> 
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
+<li class="nav-item active"><a class="nav-link" href="#">Course</a></li> 
+<li class="nav-item"><a class="nav-link" 
+href="mailto:battinenia1@udayton.edu">Contact</a></li> 
+</ul> 
+</div> 
+</div> 
+</nav> 
+<div class="container mt-5 fadeIn"> 
+<div class="row"> 
+<div class="col-md-12"> 
+<div class="profile-card"> 
+<h2>Web Application Programming & Hacking</h2> 
+<h4>General Information:</h4> 
+<p><strong>Class Days/Time:</strong> TR 3:35-4:50 PM</p> 
+<p><strong>Classroom:</strong> JHH 180. <a 
+href="https://docs.google.com/document/d/1QA19gBKgzceiZYgFUxjoTlf9xpwcw6vug9ksCdSn7v 
+Q/edit#bookmark=id.qz3e0j8e2bcj">Detailed class schedule here</a></p> 
+<p><strong>Prerequisites:</strong> CPS 341 and CPS 350/CPS 501</p> 
+<h4>Instructor:</h4> 
+<p><strong>Dr. Phu Phung</strong><br> 
+Office: Hathcock Hall 105<br> 
+Email: <a href="mailto:phu@udayton.edu">Phu@udayton.edu</a><br> 
+</p>  
+<h4>Course Webpage:</h4> 
+<p>All course materials, such as the syllabus, major assignments, and handouts, can 
+be found on the course page located on the Canvas server: <a 
+href="https://canvas.udayton.edu/courses/17878" target="_blank">Canvas Course 
+Page</a>.</p> 
+<!-- General Information End --> 
+<p><strong>Course Description:</strong> In this course, students will study basic 
+web application development with front-end (HTML5, JavaScript, CSS) and back-end 
+(PHP/MySQL). Web application vulnerabilities and attacks will be introduced and explored with 
+hands-on exercises on the range. Secure programming principles and practices will be 
+introduced to avoid potential web application vulnerabilities and attacks.</p> 
+<h4>Topics (Tentative):</h4> 
+<ul> 
+<li>The Web and Web Applications</li> 
+<li>Client-side Web Development with HTML5, CSS, and JavaScript</li> 
+<li>Server-side Web Application Development with PHP and Database 
+(MySQL)</li> 
+Exercises</li> 
+<li>Version control (git) and DevOps</li> 
+<li>Web Application Security: Vulnerabilities and Attacks with Hands-on 
+<li>Secure Web Programming Principles and Practices</li> 
+</ul> 
+<h4>Course Goals and Objectives:</h4> 
+<ul> 
+<li>Obtain the ability and skills to effectively use state-of-the-art techniques in 
+web application development and security tools for the analysis, design, and implementation of 
+secure web systems.</li> 
+<li>Enhance students' programming skills to develop secure, robust, sustainable 
+software products.</li> 
+<li>Establish security analysis skills to identify and avoid potential web 
+vulnerabilities.</li> 
+<li>Identify the types of security threats that perform attacks in web applications 
+and adopt corresponding countermeasures to prevent such attacks.</li> 
+<li>Obtain the ability and skills to apply practical knowledge of security in 
+designing and implementing web applications with contemporary programming 
+technologies.</li> 
+</ul> 
+<h4>Course Outcomes:</h4> 
+<ul> 
+<li>Design, implement, and evaluate a web-based solution to meet a given set of 
+computing requirements in the context of the program's discipline.</li> 
+<li>Understand the principle aspects of concepts of web application security.</li> 
+<li>Identify and discuss the types of security threats and attacks in web 
+applications and practical experience with hands-on exercises.</li> 
+<li>Adopt corresponding countermeasures to identified threats in web 
+applications and argue their effectiveness.</li> 
+<li>Apply practical knowledge of security in designing and implementing web 
+applications with contemporary technologies.</li> 
+</ul> 
+<h4>Projects/Assignments</h4> 
+<ul> 
+<li>Lab 0 - Development Environment Setup</li> 
+<li>Lab 1 - Foundations of the Web</li> 
+<li>Lab 2 - Front-end Web Development</li> 
+<li>Lab 3 - Secure Web Application Development in PHP/MySQL</li> 
+<li>Hackathon 1 - Cross-site Scripting Attacks and Defenses</li> 
+<li>Hackathon 2 - SQL Injection Attacks</li> 
+<li>Individual Project 1 – Front-end Web Development with a Professional Profile 
+Website on Bitbucket.io Cloud service</li> 
+</ul> 
+<a href="web-application-hacking.html" class="btn btn-primary mt-3">Download 
+Course Material</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+<a href="https://bit.ly/waph-s25" class="btn btn-primary mt-3">Course Material</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+<script 
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+</body> 
 </html>

@@ -109,6 +109,13 @@
             margin: 10px auto;
             display: block;
         }
+<<<<<<< HEAD
+=======
+        #weatherText {
+            text-align: center;
+            font-size: 1.2em;
+        }
+>>>>>>> 3828ad6 (readme updated)
         /* Responsive Design */
         @media (max-width: 768px) {
             .profile-header {
@@ -133,11 +140,18 @@
             #weatherIcon {
                 max-width: 80px;
             }
+<<<<<<< HEAD
+=======
+            #weatherText {
+                font-size: 1em;
+            }
+>>>>>>> 3828ad6 (readme updated)
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+<<<<<<< HEAD
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -305,6 +319,8 @@
         fetchWeather();
         setInterval(fetchWeather, 3600000);
     </script>
+=======
+>>>>>>> 3828ad6 (readme updated)
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -316,13 +332,18 @@
     </nav>
     <div class="container">
         <div class="profile-header">
+<<<<<<< HEAD
             <h1>Anvitha Battineni</h1>
+=======
+            <h1 onclick="alert(new Date().toLocaleString())">Anvitha Battineni</h1>
+>>>>>>> 3828ad6 (readme updated)
             <img src="photo.jpg" alt="Headshot" class="img-fluid rounded-circle">
         </div>
         <h2 class="section-title">Professional Profile</h2>
         <p class="lead">As a dedicated University of Dayton student pursuing a Master of Science in Computer Science, I bring a detail-oriented approach, strong teamwork skills, and effective communication to every project. I am seeking an assistant position in the Athletic Equipment Room at the Frericks Center, where I can contribute to day-to-day operations while gaining valuable experience in sport operations—skills honed through my academic and professional background.</p>
         <h2 class="section-title">Contact Information</h2>
         <ul class="list-group">
+<<<<<<< HEAD
             <li class="list-group-item">✉️ <span id="email">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionEmail()"></button></li>
             <li class="list-group-item">📞 <span id="phone">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionPhone()"></button></li>
             <li class="list-group-item">🏠 <span id="address">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionAddress()"></button></li>
@@ -330,6 +351,14 @@
             <li class="list-group-item">⛓️ <span id="linkedin">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionLinkedIn()"></button></li>
         </ul>
         <div id="weatherIcon" class="text-center mt-3"></div>
+=======
+            <li class="list-group-item">✉ <span id="email">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionEmail()"></button></li>
+            <li class="list-group-item">📞 <span id="phone">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionPhone()"></button></li>
+            <li class="list-group-item">🏠 <span id="address">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionAddress()"></button></li>
+            <li class="list-group-item">🔗 <span id="github">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionGitHub()"></button></li>
+            <li class="list-group-item">⛓ <span id="linkedin">Click to show</span> <button class="btn btn-primary btn-sm" onclick="actionLinkedIn()"></button></li>
+        </ul>
+>>>>>>> 3828ad6 (readme updated)
         <h2 class="section-title">Education</h2>
         <div class="card">
             <div class="card-body">
@@ -376,7 +405,6 @@
             </ul>
         </div>
         <p><strong>Languages:</strong> Fluent in English, Hindi, Telugu</p>
-        <p><strong>Laundering & Inventory Management:</strong> Experienced in handling, organizing, and tracking items with accuracy and attention to detail</p>
         <p><strong>Team Collaboration:</strong> Proven ability to work effectively with others in team settings, ensuring seamless operations</p>
         <p><strong>Adaptability & Flexibility:</strong> Capable of adjusting to fast-paced environments and varied schedules, including evenings and weekends</p>
         <p><strong>Communication:</strong> Skilled in verbal and non-verbal communication, promoting effective team coordination</p>
@@ -388,6 +416,7 @@
         </ul>
         <a href="waph.html" class="btn btn-primary mt-3">Web Application Programming and Hacking Course</a>
         <div id="welcomeMessage"></div>
+<<<<<<< HEAD
         <div id="digitalClock" class="text-center mt-3"></div>
         <div id="analogClock" class="text-center mt-3">
             <div id="hourHand" class="hand"></div>
@@ -412,11 +441,195 @@
             <p id="comicTitle" class="mt-2"></p>
         </div>
         <p class="mt-3 text-muted"><em>Disclaimer: The content below (jokes and comics) is generated by third-party public services (JokeAPI and XKCD API). I am not responsible for the accuracy or appropriateness of this content.</em></p>
+=======
+        <h2 class="section-title">Digital Clock</h2>
+        <div id="digitalClock" class="text-center mt-3"></div>
+        <h2 class="section-title">Analog Clock</h2>
+        <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+                        <script src="https://waph-phung.github.io/clock.js"></script>
+                        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs00EvtFFmqPF/lYI/Cx0="
+                            crossorigin="anonymous"></script>
+        <div id="weather" class="text-center mt-3">
+            <img id="weatherIcon" src="" alt="Weather Icon">
+            <p id="weatherText"></p>
+            <p id="weatherError" class="text-danger" style="display: none;">Failed to load weather data.</p>
+        </div>
+>>>>>>> 3828ad6 (readme updated)
         <div class="flagcounter mt-3">
             <a href="https://flagcounter.com/" target="_blank" title="Flag Counter">
                 <img src="https://s01.flagcounter.com/count2/7pli/bg_FFFFFF/txt_000000/border_CCCCCC/columns_4/maxflags_100/viewers_0/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0">
             </a>
         </div>
+<<<<<<< HEAD
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </html>
+=======
+        <div id="joke" class="text-center mt-3"></div>
+        <p class="mt-3 text-muted"><em>Disclaimer: The content below (jokes and weather) is generated by third-party public services (JokeAPI and Weatherbit/OpenWeatherMap APIs). I am not responsible for the accuracy or appropriateness of this content.</em></p>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXX');
+
+        // Action Functions
+        function actionPhone() {
+            const phone = $('#phone');
+            phone.html(phone.html() === 'Click to show' ? '+1 9374140074' : 'Click to show');
+        }
+        function actionAddress() {
+            const address = $('#address');
+            address.html(address.html() === 'Click to show' ? '4925 Far Hills Ave Apt D Kettering, Dayton, Ohio 45429' : 'Click to show');
+        }
+        function actionGitHub() {
+            const github = $('#github');
+            github.html(github.html() === 'Click to show' ? '<a href="https://github.com/battinenia1" target="_blank">🔗</a>' : 'Click to show');
+        }
+        function actionLinkedIn() {
+            const linkedin = $('#linkedin');
+            linkedin.html(linkedin.html() === 'Click to show' ? '<a href="https://www.linkedin.com/in/anvitha-battineni" target="_blank">⛓</a>' : 'Click to show');
+        }
+        function actionEmail() {
+            const email = $('#email');
+            email.html(email.html() === 'Click to show' ? '✉ battinenia1@udayton.edu' : 'Click to show');
+        }
+
+        // Digital Clock
+        function updateDigitalClock() {
+            const now = new Date();
+            $('#digitalClock').text(now.toLocaleTimeString());
+        }
+        $(document).ready(function() {
+            updateDigitalClock();
+            setInterval(updateDigitalClock, 1000);
+        });
+
+        // Analog Clock with Numbers
+        var canvas = document.getElementById("analog-clock");
+        var ctx = canvas.getContext ("2d");
+        var radius = canvas. height / 2;
+        ctx. translate(radius, radius) ;
+        radius = radius * 0.90
+        setInterval(drawClock, 1000);
+
+        function drawClock() {
+            drawFace(ctx, radius);
+            drawNumbers (ctx, radius) ;
+            drawTime(ctx, radius);
+        }
+
+        // Date/Time on Click (Inline)
+        document.querySelector('h1').onclick = function() {
+            alert(new Date().toLocaleString());
+        };
+
+        // Log Key Press
+        $(document).keypress(function(e) {
+            console.log(`Key pressed: ${e.key} at ${new Date().toLocaleString()}`);
+        });
+
+        // JokeAPI
+        async function fetchJoke() {
+            try {
+                const response = await fetch('https://v2.jokeapi.dev/joke/Any');
+                const result = await response.json();
+                $('#joke').html(result.type === 'single' ? result.joke : `${result.setup} - ${result.delivery}`);
+            } catch (error) {
+                $('#joke').html('Failed to load joke. Please try again later.');
+            }
+        }
+        fetchJoke();
+        setInterval(fetchJoke, 60000);
+
+        // Cookies for Visit Tracking
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i];
+                while (cookie.charAt(0) === ' ') cookie = cookie.substring(1);
+                if (cookie.indexOf(nameEQ) === 0) return cookie.substring(nameEQ.length);
+            }
+            return null;
+        }
+
+        function updateWelcomeMessage() {
+            let visitCount = parseInt(getCookie('visitCount')) || 0;
+            const lastVisit = getCookie('lastVisit');
+            visitCount += 1;
+            setCookie('visitCount', visitCount, 365);
+            if (visitCount === 1) {
+                $('#welcomeMessage').html('Welcome to my homepage for the first time! <br> Current Date and Time: ' + getCurrentDateTime());
+            } else {
+                $('#welcomeMessage').html(`Welcome back! Your last visit was ${new Date(lastVisit).toLocaleString()} <br> Current Date and Time: ` + getCurrentDateTime());
+            }
+            setCookie('lastVisit', new Date().toISOString(), 365);
+        }
+        $(document).ready(updateWelcomeMessage);
+
+        // Current Date/Time Function
+        function getCurrentDateTime() {
+            const now = new Date();
+            return now.toLocaleString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZoneName: 'short'
+            });
+        }
+
+        // Weather API with Retry
+        async function fetchWeather() {
+            const weatherbitApiKey = 'dd51a99ec1924d4cb8f700421f201f88'; // Your Weatherbit key
+            const city = 'Dayton,OH';
+            const url = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${weatherbitApiKey}`;
+            const maxRetries = 3;
+            for (let attempt = 1; attempt <= maxRetries; attempt++) {
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    const data = await response.json();
+                    const weather = data.data[0];
+                    const iconUrl = `https://www.weatherbit.io/static/img/icons/${weather.weather.icon}.png`;
+                    const temp = weather.temp; // Temperature in Celsius
+                    const description = weather.weather.description;
+                    $('#weatherIcon').attr('src', iconUrl).show();
+                    $('#weatherText').text(`Temperature: ${temp}°C, ${description}`).show();
+                    $('#weatherError').hide();
+                    return;
+                } catch (error) {
+                    console.error(`Weatherbit API attempt ${attempt} failed:`, error);
+                    if (attempt === maxRetries) {
+                        $('#weatherIcon').attr('src', '').hide();
+                        $('#weatherText').text('').hide();
+                        $('#weatherError').html('Failed to load weather data after multiple retries. Check network.').show();
+                    } else {
+                        await new Promise(resolve => setTimeout(resolve, 2000 * attempt)); // Exponential backoff
+                    }
+                }
+            }
+        }
+        fetchWeather();
+        setInterval(fetchWeather, 3600000);
+    </script>
+</body>
+</html>
+>>>>>>> 3828ad6 (readme updated)
